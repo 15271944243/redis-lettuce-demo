@@ -15,6 +15,6 @@ The following guides illustrate how to use some features concretely:
 
 * [lettuce.io](https://lettuce.io/core/release/reference/index.html)
 * [github](https://github.com/lettuce-io/lettuce-core#readme)
-* [spring-data-redis](https://docs.spring.io/spring-data/redis/docs/2.1.10.RELEASE/reference/html/)
+* [spring-data-redis](https://docs.spring.io/spring-data/redis/docs/2.1.9.RELEASE/reference/html/)
 
 
