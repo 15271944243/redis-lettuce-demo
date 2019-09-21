@@ -5,17 +5,22 @@ import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.sync.RedisCommands;
 import io.lettuce.core.cluster.RedisClusterClient;
 import io.lettuce.core.cluster.api.StatefulRedisClusterConnection;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
+import org.springframework.data.redis.core.RedisTemplate;
 
 @SpringBootApplication
-public class RedisLettuceDemoApplication  implements ApplicationListener<ApplicationReadyEvent> {
+public class RedisLettuceDemoApplication implements ApplicationListener<ApplicationReadyEvent> {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RedisLettuceDemoApplication.class, args);
 	}
+
+	@Autowired
+    private RedisTemplate redisTemplate;
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
@@ -28,6 +33,19 @@ public class RedisLettuceDemoApplication  implements ApplicationListener<Applica
         connection.close();
         redisClient.shutdown();
     }
+
+    private void publish() {
+        // redisTemplate
+        redisTemplate.convertAndSend("hello", "xxx");
+
+        // redisConnection
+        RedisClient redisClient = RedisClient.create("redis://redis-test1.o4r4dx.0001.cnn1.cache.amazonaws.com.cn:6379/0");
+        StatefulRedisConnection<String, String> connection = redisClient.connect();
+        RedisCommands<String, String> syncCommands = connection.sync();
+        syncCommands.publish("hello", "xxx");
+    }
+
+
 
     private void connectToRedis() {
         // Syntax: redis://[password@]host[:port][/databaseNumber]

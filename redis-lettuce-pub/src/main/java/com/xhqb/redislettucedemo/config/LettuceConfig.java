@@ -9,6 +9,7 @@ import org.springframework.data.redis.connection.RedisSocketConfiguration;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceClientConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
+import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 
 /**
  * @description:
@@ -32,6 +33,7 @@ public class LettuceConfig {
 
         return lettuceConnectionFactory;
     }
+
 
 
     /**
