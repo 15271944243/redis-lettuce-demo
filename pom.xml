@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>redis-lettuce-pub</module>
+        <module>redis-lettuce-sub</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
