@@ -6,6 +6,8 @@
     <modules>
         <module>redis-lettuce-pub</module>
         <module>redis-lettuce-sub</module>
+        <module>redis-lettuce-sub-sdr</module>
+        <module>redis-lettuce-pub-sdr</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
