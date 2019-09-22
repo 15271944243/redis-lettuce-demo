@@ -1,4 +1,4 @@
-package redislettucedemo.config;
+package com.xhqb.redislettucedemo.config;
 
 import org.springframework.context.annotation.Configuration;
 

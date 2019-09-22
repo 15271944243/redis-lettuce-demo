@@ -1,4 +1,4 @@
-package redislettucedemo.config;
+package com.xhqb.redislettucedemo.config;
 
 import io.lettuce.core.ReadFrom;
 import org.springframework.context.annotation.Bean;

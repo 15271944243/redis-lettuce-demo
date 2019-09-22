@@ -1,4 +1,4 @@
-package redislettucedemo;
+package com.xhqb.redislettucedemo;
 
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.api.StatefulRedisConnection;
