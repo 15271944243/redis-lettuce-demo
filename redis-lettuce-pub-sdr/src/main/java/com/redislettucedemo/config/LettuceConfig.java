@@ -1,4 +1,4 @@
-package com.xhqb.redislettucedemo.config;
+package com.redislettucedemo.config;
 
 import io.lettuce.core.ReadFrom;
 import org.springframework.context.annotation.Bean;
@@ -29,6 +29,7 @@ public class LettuceConfig {
         LettuceConnectionFactory lettuceConnectionFactory = new LettuceConnectionFactory(configuration);
         //  To use a dedicated connection each time, set shareNativeConnection to false.
 //        lettuceConnectionFactory.setShareNativeConnection();
+
         return lettuceConnectionFactory;
     }
 
